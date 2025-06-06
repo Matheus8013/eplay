@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { colors } from '../../styles'
 
-export const Items = styled.ul`
+export const Itens = styled.ul`
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
@@ -21,11 +21,12 @@ export const Action = styled.div`
   transition: opacity 0.5s ease;
 `
 
-export const Item = styled.li`
+export const Iten = styled.li`
   position: relative;
+  cursor: zoom-in;
 
   > img {
-    border: 2px solid ${cores.branco};
+    border: 2px solid ${colors.white};
     border-radius: 8px;
     width: 150px;
     height: 150px;
@@ -78,6 +79,12 @@ export const ModalContent = styled.div`
     h4 {
       font-size: 18px;
       font-weight: bold;
+    }
+
+    img {
+      cursor: pointer;
+      height: 16px;
+      width: 16px;
     }
   }
 

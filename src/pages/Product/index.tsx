@@ -1,17 +1,22 @@
 import { useParams } from 'react-router-dom'
+
 import Hero from '../../components/Hero'
 import Section from '../../components/Section'
-
+import Loader from '../../components/Loader'
 import Gallery from '../../components/Gallery'
 
 import { useGetGameQuery } from '../../services/api'
 
+type GameParans = {
+  id: string
+}
+
 const Product = () => {
-  const { id } = useParams()
-  const { data: game } = useGetGameQuery(id!)
+  const { id } = useParams() as GameParans
+  const { data: game } = useGetGameQuery(id)
 
   if (!game) {
-    return <h3>Carregando...</h3>
+    return <Loader />
   }
 
   return (
